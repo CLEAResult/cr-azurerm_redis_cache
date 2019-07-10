@@ -19,7 +19,7 @@ output "primary_access_key" {
 }
 
 output "connection_string" {
-  value = format("%s@%s?ssl=true", azurerm_redis_cache.primary.*.primary_access_key, azurerm_redis_cache.primary.*.hostname)
+  value = format("%s@%s?ssl=true", azurerm_redis_cache.primary[0].primary_access_key, azurerm_redis_cache.primary[0].hostname)
 }
 
 output "azurerm_redis_firewall_rule" {
